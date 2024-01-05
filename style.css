@@ -228,9 +228,9 @@ section {
 }
 
 .about-img img {
-  animation: anim 6s linear infinite;
+  animation: anim 20s linear infinite;
   background-color: var(--main-color);
-  filter: drop-shadow(0 0 2rem var(--main-color));
+  filter: drop-shadow(0 0 4rem var(--main-color));
   border: 3px solid var(--text-color);
   border-radius: 30% 70% 53% 47% / 26% 46% 54% 74%;
 }
@@ -274,5 +274,28 @@ section {
 
   90% {
     border-radius: 20% 80% 20% 80% / 20% 80% 20% 80%;
+  }
+}
+
+.about-content p span {
+  color: transparent;
+  background-image: linear-gradient(
+    to right,
+    var(--text-color),
+    var(--text-color)
+  );
+  background-clip: text;
+  background-size: 0% 100%;
+  background-repeat: no-repeat;
+  animation: animete-text 6s linear forwards;
+  animation-timeline: view();
+  animation-range: contain;
+  animation-range-start: 0%;
+  animation-range-end: 40%;
+}
+
+@keyframes animete-text {
+  to {
+    background-size: 100% 100%;
   }
 }
